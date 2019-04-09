@@ -1,0 +1,1224 @@
+@import url(https://fonts.googleapis.com/css?family=Fjalla+One);
+
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+}
+
+body{
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
+/*navigation */
+nav{
+  display: flex;
+  position: absolute;
+  width: 100%;
+  flex-direction: column;
+  left: -110%;
+  transition: left 1s;
+}
+
+nav a{
+  font-family: 'Fjalla One', sans-serif;
+  padding: 40% 5%;
+  color: white;
+  background: transparent;
+  text-decoration: none;
+  border-bottom: 1px solid ;
+
+  transition: all .5s;
+  text-align: center;
+  background: rgba(0, 62, 85, 0.8);
+  text-shadow:  #533d4a 1px 1px,  #533d4a 2px 2px,  #533d4a 3px 3px,  #533d4a 4px 4px;
+}
+
+#menuPosition #menu a{
+  font-size: 2em;
+}
+
+nav a:hover{
+  color: white;
+}
+
+nav a:active{
+  color: white;
+}
+
+#menuPosition{
+  z-index: 2;
+  position: fixed;
+  width: 100%;
+}
+
+#hamburger{
+  position: relative;
+  z-index: 3;
+  cursor: pointer;
+  display: block;
+  padding: 0.5em;
+  float: left;
+  margin: 0;
+}
+
+#hamburger div{
+  width: 20px;
+  height: 2px;
+  background-color: white;
+  margin: 6px 0px;
+  transition: 0.4s;
+}
+
+#skillsExperience #hamburger div{
+  background-color: black;
+}
+
+#menu a:hover{
+  color: black;
+}
+
+#menu a:active{
+  color: black;
+}
+
+.change div:first-child{
+  transform: rotate(-45deg) translate(-7px, 5px);
+}
+
+.change div:nth-child(2){
+  opacity: 0;
+}
+
+.change div:last-child{
+  transform: rotate(45deg) translate(-6px, -5px);
+}
+
+.showMenu{
+  left: 0%;
+}
+
+/*footer*/
+footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2%;
+  z-index: 5;
+}
+
+.whiteFooter .fab{
+  color: white;
+}
+
+.fab{
+  padding: 0% 5%;
+  font-size: 2em;
+  cursor: pointer;
+  color: #1f271b ;
+}
+
+.fab:hover{
+  color: #533d4a;
+}
+
+.fab:active{
+  color: #533d4a;
+}
+
+/*home*/
+#home{
+  background-color: #F22E61;
+  margin: 0;
+  height: 100vh;
+}
+
+#svgBlop{
+  width: 100%;
+  height: 100%;
+}
+
+/*adapted from https://codepen.io/ccprog/pen/qgxLrW*/
+/*svg background animation*/
+svg {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: 700px;
+}
+.filled-heading {
+    text-transform: uppercase;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 3em;
+    text-shadow:  #533d4a 1px 1px,  #533d4a 2px 2px,  #533d4a 3px 3px,  #533d4a 4px 4px, #533d4a 5px 5px, #533d4a 6px 6px, #533d4a 7px 7px, #533d4a 8px 8px, #533d4a 9px 9px;
+}
+
+#background path {
+    animation: pulse 4s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite;
+    transform-origin: 50% 50%;
+    transform-box: fill-box;
+}
+#textMask g {
+    animation: show 12s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite;
+}
+#textMask .second {
+    animation-delay: -8s;
+}
+#textMask .third {
+    animation-delay: -4s;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(0) rotate(33deg); }
+    35%, 65% { transform: scale(1) rotate(0deg); }
+}
+@keyframes show {
+    0% {
+        fill: #000;
+        opacity: 1;
+    }
+    12% { fill: #fff; }
+    21% { fill: #fff; }
+    33.3% { opacity: 1; }
+    33.31% {
+        fill: #000;
+        opacity: 0;
+    }
+    100% { opacity: 0 }
+}
+
+/*Porfolio*/
+#porfolio{
+  background-color: #F22E61;
+  min-height: 100%;
+}
+
+
+/*porfolio image tiles*/
+#underline div{
+  text-decoration: underline;
+  cursor: default;
+}
+
+#porfolioSection{
+  position: absolute;
+  z-index: -1;
+  margin: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  justify-content: center;
+  font-size: 0.5em;
+}
+
+/*image tile overlay*/
+.container{
+  position: relative;
+  width: 100%;
+}
+
+.image{
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.overlay{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: rgba(0, 158, 216, 0.6);
+  cursor: pointer;
+}
+
+.container:hover .overlay{
+  opacity: 1;
+}
+
+.text{
+  font-family: 'Fjalla One', sans-serif;
+  text-align: center;
+  font-size: 4em;
+  text-shadow:  #533d4a 1px 1px,  #533d4a 2px 2px,  #533d4a 3px 3px,  #533d4a 4px 4px;
+  font-weight: bolder;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  color: white;
+  width: 60%;
+}
+
+/*project info pages*/
+.animProject{
+  background-color: white;
+}
+
+.banner img{
+  width: 100%;
+  margin: 0;
+}
+
+.banner{
+  position: relative;
+}
+
+.banner h2{
+  padding-top: 40%;
+  font-family: 'Fjalla One', sans-serif;
+  text-align: center;
+  font-size: 2em;
+  text-shadow:  #533d4a 1px 1px,  #533d4a 2px 2px,  #533d4a 3px 3px,  #533d4a 4px 4px;
+  text-align: center;
+  font-weight: bolder;
+  margin: 0;
+  top: 18%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  color: white;
+  width: 50%;
+}
+
+.projectInfo{
+  text-align: left;
+  margin: 0 auto;
+  width: 60%;
+}
+
+.projectInfo p{
+  font-size: 1em;
+  font-weight: bolder;
+}
+
+.projectMedia{
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 20%;
+}
+
+#projectMediaBlue{
+  width: 100%;
+  background-color: #009ED8;
+}
+
+#projectMediaPurple{
+  width: 100%;
+  background-color: #1c032d;
+}
+
+#projectMediaDarkBlue{
+  width: 100%;
+  background-color: #07518B;
+}
+
+#projectMediaRed{
+  width: 100%;
+  background-color: #B5262C;
+}
+
+#projectMediaWhite{
+  width: 100%;
+  background-color: #BFBDBE;
+}
+
+.crt-icon-right-open{
+  display: block;
+  margin: 115.5%;
+}
+
+.projectMedia img{
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+  height: auto;
+  padding-top: 10%;
+  padding-bottom: 5%;
+}
+
+.projectMedia video{
+  width: 80%;
+  height: auto;
+  padding-top: 10%;
+  padding-bottom: 5%;
+}
+
+.caption{
+  text-align: center;
+}
+
+.caption p{
+  width: 80%;
+  margin: 0 auto;
+  color: white;
+  font-size: 0.8em;
+}
+
+#cover{
+  width: 60%;
+}
+
+.rotate{
+  transform: rotate(-90deg);
+}
+
+/*About Me Page*/
+#skillsExperience{
+  background-color: #009ed8;
+  width: 100%;
+  margin: 0 auto;
+}
+
+#skillsExperience h2{
+  font-family: 'Fjalla One', sans-serif;
+  text-align: center;
+  font-size: 30px;
+  transform: skew(-10deg);
+  text-shadow:  #533d4a 1px 1px,  #533d4a 2px 2px,  #533d4a 3px 3px,  #533d4a 4px 4px;
+}
+
+#skills h3{
+  margin: 0;
+  padding-bottom: 5%;
+  color: white;
+  font-size: 30px;
+  text-shadow:  #533d4a 1px 1px,  #533d4a 2px 2px,  #533d4a 3px 3px,  #533d4a 4px 4px;
+}
+
+#profile{
+  background-color: white;
+  margin: 0 auto;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding-top: 10%;
+  z-index: -2;
+}
+
+#profile h1, #profile h2{
+  font-family: 'Fjalla One', sans-serif;
+  color: #009ed8;
+  text-align: center;
+  text-shadow: none;
+  transform: none;
+}
+
+#profile h1{
+  font-size: 30px;
+}
+
+#profile h2{
+  font-size: 20px;
+}
+
+#profile p{
+  width: 90%;
+  display: block;
+  margin: 0 auto;
+}
+
+ul{
+  margin-left: 43%;
+  list-style-type: square;
+}
+
+/*Skills*/
+#skills{
+  background-color: #009ED8;
+  color: white;
+  font-size: 0.8em;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  padding-top: 10%;
+  padding-bottom: 80%;
+}
+
+#skillsList{
+  position: relative;
+  width: 98%;
+}
+
+#apps{
+  float: left;
+  text-align: right;
+  width: 20%;
+  font-family: 'Fjalla One', sans-serif;
+  color: white;
+  background: transparent;
+  text-decoration: none;
+  text-shadow:  #533d4a 1px 1px;
+  font-weight: lighter;
+}
+
+#apps p{
+  padding: 11% 0%;
+  position: relative;
+  text-align: right;
+  z-index: 1;
+}
+
+#scale{
+  padding-bottom: 30px;
+  position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -30px;
+}
+
+#scale p{
+  position: absolute;
+    bottom: 0;
+    left: -0.30%;
+}
+
+#scale p.one{ left:24%;}
+#scale p.two{ left:49%;}
+#scale p.three{left:74%;}
+#scale p.four{left: 99%;}
+
+.grid{
+  border-left: 2px dotted #ffcf42;
+  border-bottom: 2px dotted #ffcf42;
+  float: left;
+  padding: 10px 0;
+  position: relative;
+  width: 60%;
+  z-index: 1;
+  margin-left: 7%;
+}
+
+.bar{
+  float: left;
+  height: 15px;
+  margin-bottom: 20px;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.bar .inner{
+  background-color: #ffcf42;
+  position: absolute;
+    bottom: 0;
+    left: 0;
+    top: 0;
+}
+
+.bar.pct-40 .inner{
+  animation-duration: 1s;
+  animation-name: grow-40;
+  right: 60%;
+}
+
+@keyframes grow-40{
+  from {right: 100%;}
+  to {right: 60%;}
+}
+
+.bar.pct-50 .inner{
+  animation-duration: 3s;
+  animation-name: grow-50;
+  right: 50%;
+}
+
+@keyframes grow-50{
+  from {right: 100%;}
+  to {right: 50%;}
+}
+
+.bar.pct-60 .inner{
+  animation-duration: 3s;
+  animation-name: grow-60;
+  right: 40%;
+}
+
+@keyframes grow-60{
+  from {right: 100%;}
+  to {right: 40%;}
+}
+
+.bar.pct-75 .inner{
+  animation-duration: 2s;
+  animation-name: grow-75;
+  right: 25%;
+}
+
+@keyframes grow-75{
+  from {right: 100%;}
+  to {right: 25%;}
+}
+
+.bar.pct-80 .inner{
+  animation-duration: 3s;
+  animation-name: grow-80;
+  right: 20%;
+}
+
+@keyframes grow-80{
+  from {right: 100%;}
+  to {right: 20%;}
+}
+
+.bar.pct-85 .inner{
+  animation-duration: 2s;
+  animation-name: grow-85;
+  right: 15%;
+}
+
+@keyframes grow-85{
+  from {right: 100%;}
+  to {right: 15%;}
+}
+
+.v-divider{
+  border-right: 2px dotted #ffcf42;
+  position: absolute;
+  left: 0;
+  right: 25%;
+  bottom: 0;
+  top: 0;
+  z-index: 0;
+}
+
+.v-divider.one{right:75%;}
+.v-divider.two{right:50%;}
+
+
+.popup{
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  user-select: none;
+}
+
+.popup .popuptext{
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 5;
+  bottom:125%;
+}
+
+#photoshop{
+  margin-left: 35%;
+}
+
+#indesign{
+  margin-left: 10%;
+}
+
+#premiere{
+  margin-left: 35%;
+}
+
+#illustrator{
+  margin-left: 10%;
+}
+
+#lightroom{
+  margin-left: 35%;
+}
+
+#afterEffects{
+  margin-left: 10%;
+}
+
+#photos{
+  margin-left: 35%;
+}
+
+#maya{
+  margin-left: 10%;
+}
+
+#html{
+  margin-left: 35%;
+}
+
+#javascript{
+  margin-left: 7%;
+}
+
+.popup .popuptext:after{
+  content:"";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.popup .show{
+  visibility: visible;
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.modal img{
+  width: 100%;
+}
+
+/*experience section */
+#experience img{
+  width: 70%;
+  cursor: pointer;
+}
+
+#tkdBanner{
+  width:100%;
+}
+
+/* Slideshow */
+.textinfo{
+  width: 100%;
+  height: 600px;
+}
+
+.textInfo p{
+  font-size: 0.9em;
+}
+
+#experience{
+  min-width: 100%;
+  display: block;
+  margin: 0 auto;
+  color: white;
+  background-color: #182b2e;
+  padding-top: 1%;
+  margin-top: 30%;
+  padding-bottom: 15%;
+}
+
+#experience h2{
+  color: white;
+  text-shadow:  #533d4a 1px 1px,  #533d4a 2px 2px,  #533d4a 3px 3px;
+  font-weight: lighter;
+  font-size: 2em;
+}
+
+#experience h3{
+  font-family: 'Fjalla One', sans-serif;
+  background: transparent;
+  text-decoration: none;
+  text-shadow:  #533d4a 1px 1px,  #533d4a 2px 2px,  #533d4a 3px 3px;
+  font-weight: lighter;
+}
+
+.slideshow-container{
+  width: 90%;
+  position: block;
+  margin: 0 auto;
+  font-size: 0.5em;
+}
+
+.mySlides{
+  display: none;
+}
+
+.prev, .next{
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next{
+  right: 0;
+  border-radius: 3px 0 0 3px;
+  margin-left: 90%;
+}
+
+.prev:hover, .next:hover{
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.textInfo{
+ color: #f2f2f2;
+ font-size: 2em;
+ position: block;
+ bottom: 8px;
+ width: 100%;
+ text-align: left;
+}
+
+.textinfo, h3, h4{
+  text-align:center;
+}
+
+.numbertext{
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  text-align: center;
+  top:0;
+}
+
+.imageExperience{
+  display: block;
+  margin: 0 auto;
+}
+
+.fade{
+  animation-name: fade;
+  animation-duration: 0.7s;
+}
+
+@keyframes fade {
+  from {opacity: 0}
+  to {opacity: 1}
+}
+
+#exp1{
+  margin-top: 10%;
+}
+
+#exp2{
+  margin-top: 18.1%;
+}
+
+#exp4{
+  margin-top: 32%;
+}
+
+/*Contact*/
+#contact{
+  background-color: #F22E61;
+  color: white;
+}
+
+#form{
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 10%;
+}
+
+input:focus{
+  border: 2px solid #30b700;
+}
+
+input, textarea{
+  display: block;
+}
+
+input[type=text]{
+  width: 100%;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 2%;
+  margin-top: 6px;
+  margin-bottom: 10px;
+}
+
+textarea{
+  width: 100%;
+  border-radius: 4px;
+  margin-top: 6px;
+  margin-bottom: 10px;
+}
+
+input[type="submit"],
+input[type="reset"]{
+  display: inline-block;
+}
+
+input[type="submit"]{
+  background-color: #30b700;
+  border: none;
+  cursor: pointer;
+  color: white;
+  border-radius: 5px;
+  padding: 2%;
+  width: 20%;
+  font-size: 1em;
+}
+
+input[type="submit"]:hover{
+  background-color: #2aa000;
+}
+
+input[type="reset"]{
+  background-color: #ff2626;
+  border: none;
+  cursor: pointer;
+  color: white;
+  border-radius: 5px;
+  padding: 2%;
+  width: 20%;
+  font-size: 1em;
+}
+
+input[type="reset"]:hover{
+  background-color: #d52222;
+}
+
+#contactText{
+  width: 100%;
+  position: absolute;
+  display: block;
+  margin: 0 auto;
+}
+
+#contactText h1{
+  font-family: 'Fjalla One', sans-serif;
+  color: white;
+  background: transparent;
+  text-decoration: none;
+  font-size: 2em;
+  text-align: center;
+  transform: skew(-10deg);
+  text-shadow:  #533d4a 1px 1px,  #533d4a 2px 2px,  #533d4a 3px 3px,  #533d4a 4px 4px;
+}
+
+@media screen and (min-width:600px){
+  #porfolioSection{
+    position: static;
+    grid-template-columns: 50% 50%;
+    }
+   nav{
+    flex-direction: row;
+    justify-content: center;
+    height: auto;
+    left: 0%;
+    background: rgba(255, 255, 255, 0);
+  }
+  nav a{
+    background: none;
+    border-bottom: none;
+    font-size: 1.2em;
+    padding: 1.5%;
+  }
+  nav a:last-child{
+    margin-right: 0;
+  }
+  #menu{
+    display: inline-block;
+    font-size: 1em;
+    height: auto;
+    text-align: center;
+    padding-top: 2%;
+  }
+  .projectInformation{
+    font-size: 3em;
+  }
+  #hamburger{
+    display: none;
+  }
+  .banner h2{
+    text-transform: uppercase;
+    font-size: 3em;
+    text-align: center;
+    font-weight: normal;
+    margin: 0;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    color: white;
+    width: 50%;
+  }
+  #skills{
+    padding-bottom: 15%;
+  }
+  #skills h2{
+    padding-bottom: 20px;
+  }
+  #apps p{
+    padding: 9.5% 0%;
+    font-size: 1.2em;
+    margin: 0;
+  }
+  .bar{
+    float: left;
+    height: 15px;
+    margin-bottom: 25px;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+  }
+  .grid{
+    padding-top: 20px;
+  }
+  .dotsNext{
+    margin: 0%;
+  }
+  #skillsExperience{
+    max-width: 100%;
+  }
+  #experience{
+    font-size: 1em;
+    max-width: 100%;
+    margin-top: 400px;
+  }
+  #experience h2{
+    padding-top: 0px;
+  }
+  .textInfo{
+    width: 70%;
+    margin: 0 auto;
+  }
+  #slideshowSize{
+    padding-top: 0px;
+  }
+  #exp1{
+    margin-top: 10%;
+  }
+  #exp2{
+    margin-top: 18.1%;
+  }
+  #exp4{
+    margin-top: 32%;
+  }
+  footer{
+    max-width: 100%;
+  }
+  .caption p{
+    width: 40%;
+  }
+  .crt-icon-right-open{
+    display: block;
+    margin: 0%;
+  }
+}
+
+@media screen and (min-width: 900px){
+  #porfolioSection{
+    grid-template-columns: 50% 50%;
+    margin: 0;
+  }
+  #profile p{
+    width: 40%;
+  }
+  .bar{
+    height: 20px;
+  }
+  #javascript{
+    margin-left: 10%;
+  }
+  #apps p{
+    padding: 6.2% 1%;
+    margin-left: 60%;
+  }
+  .popup .popuptext{
+    height: auto;
+    width:210px;
+    font-size: 1.2em;
+  }
+  .textInfo p{
+    padding-bottom: 2%;
+  }
+  #exp1{
+    margin-top: 11.8%;
+  }
+  #exp2{
+    margin-top: 18%;
+  }
+  #tkdBanner{
+    padding-top:9%;
+  }
+  #exp4{
+    margin-top: 23.4%;
+  }
+  .overlay{
+    margin: 0;
+  }
+  .caption{
+    font-size: 1.3em;
+  }
+  svg{
+    height: 1000px;
+  }
+  footer{
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 1000px){
+  #porfolioSection{
+    grid-template-columns: 33.33% 33.33% 33.33%;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+  }
+  .grid{
+    margin-left: 10px;
+  }
+  #apps p{
+    padding: 6% 0%;
+  }
+  #exp1{
+    margin-top: 11%;
+  }
+  #exp2{
+    margin-top: 15.7%;
+  }
+  #tkdBanner{
+    padding-top:9%;
+  }
+  #exp4{
+    margin-top: 24.2%;
+  }
+  .banner h2{
+    top: 45%;
+    left: 50%;
+  }
+  .projectInfo{
+    text-align: center;
+    font-size: 1.2em;
+    width: 25%;
+    padding: 5%;
+  }
+  svg{
+    height: 1000px;
+  }
+}
+
+@media screen and (min-width: 1500px){
+  svg{
+    height: 1500px;
+    transform: translateY(-200px);
+  }
+  #skills{
+    padding-top: 100px;
+  }
+  #apps p{
+    padding: 4% 0%;
+  }
+  .textInfo p{
+    font-size: 1em;
+  }
+  #projectMedia video{
+    width: 40%;
+  }
+  #cover{
+      width: 40%;
+      height: auto;
+      padding-top: 5%;
+      padding-bottom: 5%;
+  }
+  .banner h2{
+    font-size: 4em;
+    padding-top: 20%;
+  }
+  .projectInfo{
+    text-align: center;
+    font-size: 2em;
+    width: 40%;
+    padding: 5%;
+  }
+  #projectMediaRed{
+    height: 1000px;
+  }
+  #projectMediaBlue{
+    height: 2200px;
+  }
+  #projectMediaDarkBlue{
+    height: 2000px;
+  }
+  #projectMediaPurple{
+    height: 2500px;
+  }
+  .projectMedia video{
+    width: 60%;
+  }
+  .projectMedia img{
+    width: 60%;
+  }
+  #fruitBowl img{
+    float: right;
+  }
+  #fruitBowl p{
+    float: left;
+    margin-left: 5%;
+  }
+  #chineseFood video{
+    float: left;
+    border-radius: 5px;
+  }
+  #chineseFood p{
+    float: right;
+  }
+  #carnivalVideo video{
+    float:left;
+  }
+  #carnivalVideo p{
+    float: right;
+    margin-left: 5%;
+  }
+  #redHead video{
+    float: left;
+  }
+  #magazine img{
+    float: left;
+  }
+  #cover{
+    margin-left: 10%;
+  }
+  #motionTitle video{
+    margin-top: 1%;
+    float: right;
+  }
+  #motionTitle p{
+    float: left;
+    margin-left: 5%;
+  }
+  #banner img{
+    margin: 0 auto;
+    padding-top: 10%;
+    padding-bottom: 0;
+  }
+  #banner p{
+    padding-top: 3%;
+    padding-bottom: 5%;
+    margin: 0 auto;
+  }
+  #tShirt img{
+    float: left;
+  }
+  #tShirt p{
+    padding-top: 15%;
+    float: right;
+  }
+  #tkdVideo video{
+    float: right;
+  }
+  #tkdVideo p{
+    padding-top: 15%;
+    float: left;
+  }
+  .caption p{
+    width: 25%;
+    padding-top: 25%;
+    text-align: left;
+    margin-right: 10%;
+    font-size: 1.2em;
+  }
+}

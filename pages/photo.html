@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Vast+Shadow" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>Photography</title>
+  </head>
+  <body>
+    <div id="menuPosition">
+      <div id="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <nav id="menu">
+        <a href="../index.html">Work</a>
+        <a href="skills.html">About Me</a>
+      </nav>
+    </div>
+
+  <section class="animProject">
+    <div class="banner">
+      <h2>Photography</h2>
+      <img src="../img/photography.jpg" alt="Apartment buildings in Berlin">
+    </div>
+
+    <div class="projectInfo">
+      <p>Led self directed photography projects including shoots of landscapes, urban environemnts, abstracts and sport.</p>
+    </div>
+    <div id="projectMediaWhite">
+        <!-- Place <div> tag where you want the feed to appear -->
+        <div id="curator-feed">
+          <a href="https://curator.io" target="_blank" class="crt-logo crt-tag">Powered by Curator.io</a>
+        </div>
+    </div>
+    </section>
+    <footer>
+      <a href="https://www.instagram.com/mcgarityphotos/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/sophie.moss.90" target="_blank"><i class="fab fa-facebook-square"></i></a>
+      <a href="https://www.linkedin.com/in/sophie-mcgarity-0866ba181/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </footer>
+  <script src="../js/javascript.js"></script>
+  <script type="text/javascript">
+/* instagram feed provided by curator-feed */
+    (function () {
+    // Loader
+    var loader = new function(){this.rC=-1;this.r=[];this.add=function(src){this.r.push(src);};this.addTag=function(src,callback){var head=document.getElementsByTagName('head')[0],tag=src.indexOf('.js')>0?'script':'link',s=document.createElement(tag);head.appendChild(s);s.onload=callback;if(tag==='script'){s.type='text/javascript';s.src=src;}else if(tag==='link'){s.rel='stylesheet';s.href=src;}};this.loadNext=function(){this.rC++;if(this.rC>=this.r.length){this.done();}else{var r=this.r[this.rC];this.addTag(r,this.loadNext.bind(this));}};this.done=function(){this.onResourcesLoaded(window.Curator);};this.load=function(cb){this.onResourcesLoaded=cb;this.loadNext();};};
+    // Config
+    var config = {"type":"Waterfall","container":"#curator-feed","debug":0,"feed":{"id":"27618480-7f7a-415b-9cfc-308fa03ae771","apiEndpoint":"https:\/\/api.curator.io\/v1.1"},"theme":"sydney"};
+    var colours = null ;
+    var styles = null;
+    // Bootstrap
+    function loadCurator (Curator) {
+        Curator.loadWidget(config, colours, styles);
+    }
+    // Run Loader
+    loader.add('https://cdn.curator.io/4.0/css/curator.css');
+    loader.add('https://cdn.curator.io/published-css/27618480-7f7a-415b-9cfc-308fa03ae771.css');
+    if (window.define) {
+        // Require detected, use Loader for CSS & Require for JS
+        loader.load(function() {
+            require.config({paths: {
+                'curator': 'https://cdn.curator.io/4.0/js/curator.min'
+            }});
+            require(['curator'], function(Curator) {loadCurator(Curator);});
+        });
+    } else {
+        // Use Loader for all
+        loader.add('https://cdn.curator.io/4.0/js/curator.min.js');
+        loader.load(loadCurator);
+    }
+})();
+</script>
+  </body>
+</html>
